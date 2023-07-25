@@ -1,0 +1,44 @@
+# This GitHub Workflow is used to extract the major version from the release tag
+# and create a new tag with just the major version.
+name: Publish Release
+
+# The workflow is triggered when a release is prereleased or released
+on:
+  release:
+    types: [prereleased, released]
+
+# The workflow consists of a single job named `release`
+jobs:
+  release:
+
+    # The job is run on the latest Ubuntu environment
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+
+      # First, we check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3.5.3
+
+      # In the next step, we configure the git user to allow pushing to the repository
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      # In the final step, we extract the major version from the tag name and push a new tag with this version
+      - name: Get and push Major version
+        if: ${{ !github.event.release.prerelease }}
+        run: |
+          # Parse the release version and extract major version. The tag name is in the format 'vX.Y.Z'
+          # We use the 'cut' command to extract the first field 
+          TAG_NAME=${{ github.event.release.tag_name }}
+          MAJOR_VERSION=$(echo $TAG_NAME | cut -d. -f1)
+          echo "Major version is $MAJOR_VERSION"
+
+          # Overwrite the tag that just includes the major version
+          git tag -fa "$MAJOR_VERSION" -m "Release $MAJOR_VERSION"
+
+          # We force push the tag to the origin repository.
+          # Note: Be careful with 'force push' as it can overwrite things!
+          git push --force origin refs/tags/$MAJOR_VERSION
