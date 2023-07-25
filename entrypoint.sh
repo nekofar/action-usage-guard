@@ -68,18 +68,18 @@ monitor_usage_and_cancel_run_if_exceeded() {
   percentage_used=$(calculate_usage_percentage)
 
   if [ "$visibility" = "PUBLIC" ]; then
-    echo -e "\033[1;33mThis is a public repository. Monitoring of usage and action cancellation is skipped.\033[0m\n"
+    echo -e "\033[1;33mThis is a public repository. Monitoring of usage and action cancellation is skipped.\033[0m"
     return 0
   fi
 
-  echo -e "\033[1;34mThe current total usage is ${percentage_used}%.\033[0m\n"
+  echo -e "\033[1;34mThe current total usage is ${percentage_used}%.\033[0m"
 
   if [ "$percentage_used" -ge "${threshold}" ]; then
-    echo -e "\033[1;31mWarning: The usage exceeds the given threshold of ${threshold}%.\033[0m\n"
-    echo -e "\033[1;33mThe ongoing GitHub Action is being cancelled due to overuse...\033[0m\n"
+    echo -e "\033[1;31mWarning: The usage exceeds the given threshold of ${threshold}%.\033[0m"
+    echo -e "\033[1;33mThe ongoing GitHub Action is being cancelled due to overuse...\033[0m"
     gh run cancel "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY"
   else
-    echo -e "\033[1;32mGood news: The usage is below the given threshold of ${threshold}%.\033[0m\n"
+    echo -e "\033[1;32mGood news: The usage is below the given threshold of ${threshold}%.\033[0m"
   fi
 }
 
@@ -89,7 +89,7 @@ if ! echo "$INPUT_TOKEN" | grep -qE "^(gh[ps]_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z
 fi
 
 if [[ $INPUT_THRESHOLD -lt 1 || $INPUT_THRESHOLD -gt 100 ]]; then
-  echo -e "\033[1;31mError: 'threshold' input is invalid. It must be a number between 1 and 100.\033[0m\n"
+  echo -e "\033[1;31mError: 'threshold' input is invalid. It must be a number between 1 and 100.\033[0m"
   exit 1
 fi
 
