@@ -14,6 +14,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3.5.3
 
+      # Uses the action-usage-guard action
+      - name: Run Action Usage Guard
+        uses: nekofar/action-usage-guard@develop
+        with:
+          # GitHub token for authentication.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Defines the threshold for the usage guard.
+          threshold: 70
+
       # Runs ShellCheck on all shell scripts in your repository
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@master
@@ -27,7 +36,7 @@ jobs:
     steps:
       # Checkout the repository code
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
         with:
           fetch-depth: 0 # Fetches all history for all branches and tags
 
