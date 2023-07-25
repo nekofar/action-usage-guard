@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.4] - 2023-07-25
+
+### <!-- 07 -->Continuous Integrations
+
+- Refactor tag version in `prepare.yml`
+- Update job name from `lint` to `guard` in `prepare.yml`
+- Updated threshold for usage guard in Github workflow
+
 ## [1.0.0-alpha.3] - 2023-07-25
 
 ### <!-- 02 -->Bug Fixes
