@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.8] - 2023-07-25
+
+### <!-- 02 -->Bug Fixes
+
+- Remove unnecessary newline in echo statements in `entrypoint.sh`
+
+### <!-- 04 -->Refactor
+
+- Remove 'x' option from bash shell settings in entry script
+
 ## [1.0.0-alpha.7] - 2023-07-25
 
 ### <!-- 02 -->Bug Fixes
