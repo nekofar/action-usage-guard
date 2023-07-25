@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.1] - 2023-07-25
+
+### <!-- 02 -->Bug Fixes
+
+- Update description and requirement status of GitHub token in `action.yml`
+
+### <!-- 05 -->Documentation
+
+- Update GitHub token in Action config for better access control
+
+### <!-- 07 -->Continuous Integrations
+
+- Update GitHub token in Action Usage Guard
+
 ## [1.0.0-alpha.0] - 2023-07-25
 
 ### <!-- 01 -->Features
