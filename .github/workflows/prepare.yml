@@ -10,10 +10,6 @@ jobs:
     name: Usage guard
     runs-on: ubuntu-latest
     steps:
-      # Checks-out the repository
-      - name: Checkout code
-        uses: actions/checkout@v3.5.3
-
       # Uses the action-usage-guard action
       - name: Run Action Usage Guard
         uses: nekofar/action-usage-guard@develop
