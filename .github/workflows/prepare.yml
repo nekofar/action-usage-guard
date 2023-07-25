@@ -22,6 +22,7 @@ jobs:
   lint:
     name: Code quality
     runs-on: ubuntu-latest
+    needs: [ guard ]
     steps:
       # Checks-out the repository
       - name: Checkout code
