@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.9] - 2023-07-25
+
+### <!-- 02 -->Bug Fixes
+
+- Correct notification message formatting in `entrypoint.sh`
+
+### <!-- 07 -->Continuous Integrations
+
+- Add dependency to the `lint` job in `prepare.yml`
+- Increase usage guard threshold in GitHub workflow
+
 ## [1.0.0-alpha.8] - 2023-07-25
 
 ### <!-- 02 -->Bug Fixes
