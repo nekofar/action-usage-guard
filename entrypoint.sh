@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -eux
 
 get_repo_visibility() {
   gh repo view --json visibility \
