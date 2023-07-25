@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.2] - 2023-07-25
+
+### <!-- 02 -->Bug Fixes
+
+- Update icon and color in `action.yml`
+
 ## [1.0.0-beta.1] - 2023-07-25
 
 ### <!-- 04 -->Refactor

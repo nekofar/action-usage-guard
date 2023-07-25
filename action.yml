@@ -2,8 +2,8 @@ name: 'Action Usage Guard'
 description: 'A GitHub Action that cancels workflows if total account usage exceeds a defined threshold.'
 author: 'nekofar'
 branding:
-    icon: 'tag'
-    color: 'blue'
+    icon: 'activity'
+    color: 'red'
 
 inputs:
     token:
