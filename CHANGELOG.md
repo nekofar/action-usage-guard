@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.2] - 2023-07-25
+
+### <!-- 04 -->Refactor
+
+- Add verbosity to entrypoint.sh script execution
+
 ## [1.0.0-alpha.1] - 2023-07-25
 
 ### <!-- 02 -->Bug Fixes
