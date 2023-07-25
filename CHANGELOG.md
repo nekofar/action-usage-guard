@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.7] - 2023-07-25
+
+### <!-- 02 -->Bug Fixes
+
+- Specify repository in GitHub run cancellation command
+
 ## [1.0.0-alpha.6] - 2023-07-25
 
 ### <!-- 02 -->Bug Fixes
