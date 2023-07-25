@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.1] - 2023-07-25
+
+### <!-- 04 -->Refactor
+
+- Add comments and increase readability in monitor script
+
 ## [1.0.0-alpha.9] - 2023-07-25
 
 ### <!-- 02 -->Bug Fixes
