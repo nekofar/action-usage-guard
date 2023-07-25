@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.5] - 2023-07-25
+
+### <!-- 04 -->Refactor
+
+- Add verbosity to error handling in `entrypoint.sh`
+
+### <!-- 07 -->Continuous Integrations
+
+- Remove checkout step from `prepare.yml`
+
 ## [1.0.0-alpha.4] - 2023-07-25
 
 ### <!-- 07 -->Continuous Integrations
