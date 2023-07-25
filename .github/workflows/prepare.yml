@@ -17,11 +17,12 @@ jobs:
           # GitHub access token for authentication.
           token: ${{ secrets.ACCESS_TOKEN }}
           # Defines the threshold for the usage guard.
-          threshold: 10
+          threshold: 70
 
   lint:
     name: Code quality
     runs-on: ubuntu-latest
+    needs: [ guard ]
     steps:
       # Checks-out the repository
       - name: Checkout code
