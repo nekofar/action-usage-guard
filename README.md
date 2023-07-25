@@ -31,8 +31,8 @@ jobs:
       - name: Run Action Usage Guard
         uses: nekofar/action-usage-guard@v1
         with:
-          # GitHub token for authentication.
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # GitHub access token for authentication.
+          token: ${{ secrets.ACCESS_TOKEN }}
           # Defines the threshold for the usage guard.
           threshold: 70
 
@@ -52,7 +52,7 @@ depicting these options:
 
 | Option       | Description                                                                                          |
 |--------------|------------------------------------------------------------------------------------------------------|
-| `token`      | (Optional) This is the actual GitHub token for authentication. The default is `github.token`.        |
+| `token`      | This is the actual GitHub access token for authentication.                                           |
 | `threshold`  | (Optional) This defines the threshold value (1-100) for the usage guard action. The default is `70`. |
 
 Each option should be carefully considered to ensure that your workflow proceeds as expected.
