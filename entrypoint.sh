@@ -3,7 +3,7 @@
 set -eux
 
 get_repo_visibility() {
-  gh repo view --json visibility \
+  gh repo view "$GITHUB_REPOSITORY" --json visibility \
          --jq '.visibility'
 }
 

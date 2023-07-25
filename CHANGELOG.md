@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.6] - 2023-07-25
+
+### <!-- 02 -->Bug Fixes
+
+- Add repository argument to gh repo view in `entrypoint.sh`
+
 ## [1.0.0-alpha.5] - 2023-07-25
 
 ### <!-- 04 -->Refactor
