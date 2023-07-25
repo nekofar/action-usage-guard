@@ -1,0 +1,26 @@
+name: 'Action Usage Guard'
+description: 'A GitHub Action that cancels workflows if total account usage exceeds a defined threshold.'
+author: 'nekofar'
+branding:
+    icon: 'tag'
+    color: 'blue'
+
+inputs:
+    token:
+        description: 'GitHub token to authenticate with the repository.'
+        required: false
+        default: ${{ github.token }}
+
+    threshold:
+        description: 'The maximum usage limit before workflows are cancelled.'
+        required: false
+        default: '70'
+
+runs:
+    using: 'composite'
+    steps:
+        - run: ${{ github.action_path }}/entrypoint.sh
+          shell: 'bash'
+          env:
+              INPUT_TOKEN: ${{ inputs.token }}
+              INPUT_THRESHOLD:  ${{ inputs.threshold }}
