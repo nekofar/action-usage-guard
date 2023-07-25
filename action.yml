@@ -7,9 +7,8 @@ branding:
 
 inputs:
     token:
-        description: 'GitHub token to authenticate with the repository.'
-        required: false
-        default: ${{ github.token }}
+        description: 'GitHub access token to authenticate with the repository.'
+        required: true
 
     threshold:
         description: 'The maximum usage limit before workflows are cancelled.'
