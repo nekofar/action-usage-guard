@@ -93,8 +93,6 @@ if [[ $INPUT_THRESHOLD -lt 1 || $INPUT_THRESHOLD -gt 100 ]]; then
   exit 1
 fi
 
-GITHUB_TOKEN=${INPUT_TOKEN:-"GITHUB_TOKEN"}
-
-echo "$GITHUB_TOKEN" | gh auth login --with-token
+export GITHUB_TOKEN=${INPUT_TOKEN:-"GITHUB_TOKEN"}
 
 monitor_usage_and_cancel_run_if_exceeded
