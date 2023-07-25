@@ -77,7 +77,7 @@ monitor_usage_and_cancel_run_if_exceeded() {
   if [ "$percentage_used" -ge "${threshold}" ]; then
     echo -e "\033[1;31mWarning: The usage exceeds the given threshold of ${threshold}%.\033[0m\n"
     echo -e "\033[1;33mThe ongoing GitHub Action is being cancelled due to overuse...\033[0m\n"
-    gh run cancel "$GITHUB_RUN_ID"
+    gh run cancel "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY"
   else
     echo -e "\033[1;32mGood news: The usage is below the given threshold of ${threshold}%.\033[0m\n"
   fi
