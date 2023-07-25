@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-alpha.3] - 2023-07-25
+
+### <!-- 02 -->Bug Fixes
+
+- Remove redundant echo of Github token in `entrypoint.sh`
+
+### <!-- 04 -->Refactor
+
+- Update usage messages in `entrypoint.sh`
+- Update shell script for improved readability and user-friendliness
+
 ## [1.0.0-alpha.2] - 2023-07-25
 
 ### <!-- 04 -->Refactor
