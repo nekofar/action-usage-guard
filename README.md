@@ -1,0 +1,64 @@
+# GitHub Action Usage Guard
+
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/nekofar/action-usage-guard?include_prereleases)](https://github.com/nekofar/action-usage-guard/releases)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/nekofar/action-usage-guard/prepare.yml)](https://github.com/nekofar/action-usage-guard/actions/workflows/prepare.yml)
+[![GitHub](https://img.shields.io/github/license/nekofar/action-usage-guard)](https://github.com/nekofar/action-usage-guard/blob/master/LICENSE)
+[![Twitter Follow](https://img.shields.io/badge/follow-%40nekofar-1DA1F2?logo=twitter&style=flat)](https://twitter.com/nekofar)
+[![Donate](https://img.shields.io/badge/donate-nekofar.crypto-a2b9bc?logo=ko-fi&logoColor=white)](https://ud.me/nekofar.crypto)
+
+A GitHub Action that cancels workflows if total account usage exceeds a defined threshold.
+
+## Usage
+
+```yaml
+# This is the name of your GitHub Actions workflow
+name: Main Workflow
+
+# This workflow gets triggered on every push to your repository
+on: [push]
+
+# These are your workflow's jobs. Each job represents a process that your workflow will run.
+jobs:
+  setup:
+    # Runs the job on the latest Ubuntu version
+    runs-on: ubuntu-latest
+    steps:
+      # This is a step to checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Uses the action-usage-guard action
+      - name: Run Action Usage Guard
+        uses: nekofar/action-usage-guard@v1
+        with:
+          # GitHub token for authentication.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          # Defines the threshold for the usage guard.
+          threshold: 70
+
+      # You can add as many steps as you want. Here is another example step.
+      - name: Another Step
+        # For illustration, we use actions/hello-world-docker-action
+        uses: actions/hello-world-docker-action@v1
+        with:
+          who-to-greet: 'GitHub Actions'
+```
+
+## Options
+
+The configuration used in the GitHub Action workflow includes several options for customization. Each of these
+configuration options has a specific use and can be tailored to suit your specific workflow needs. Below is a table
+depicting these options:
+
+| Option       | Description                                                                                          |
+|--------------|------------------------------------------------------------------------------------------------------|
+| `token`      | (Optional) This is the actual GitHub token for authentication. The default is `github.token`.        |
+| `threshold`  | (Optional) This defines the threshold value (1-100) for the usage guard action. The default is `70`. |
+
+Each option should be carefully considered to ensure that your workflow proceeds as expected.
+
+## Contributing
+
+We value your input and help! If you're interested in contributing, please reference
+our [Contributing Guidelines](./CONTRIBUTING.md). Contributions aren't just about code - any bug reports, feedback, or
+documentation enhancements are welcomed. Thanks for helping to improve this project!
