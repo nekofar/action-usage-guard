@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# Making sure the script stops if any of the commands fails
 set -eu
 
+# Function to get visibility of the repository, whether public or private
 get_repo_visibility() {
   gh repo view "$GITHUB_REPOSITORY" --json visibility \
          --jq '.visibility'
 }
 
+# Function to get the owner type of the repository, User or Organization
 get_owner_type() {
   gh api -H "Accept: application/vnd.github+json" \
          -H "X-GITHUB-API-VERSION: 2022-11-28" \
@@ -14,6 +17,7 @@ get_owner_type() {
          --jq '.type'
 }
 
+# Function to construct the billing endpoint URL based on if the repository is owned by User or an Organization
 get_billing_endpoint() {
   local owner_type="$1"
   local endpoint
@@ -27,6 +31,7 @@ get_billing_endpoint() {
   echo "$endpoint"
 }
 
+# Function to fetch billing information from the constructed endpoint URL
 get_billing_info() {
   local endpoint
   endpoint=$(get_billing_endpoint "$(get_owner_type)")
@@ -36,18 +41,21 @@ get_billing_info() {
            "$endpoint"
 }
 
+# Function to parse total minutes being used from the billing info
 get_total_minutes_used() {
   local billing_info
   billing_info=$(get_billing_info)
   echo "$billing_info" | jq -r ".total_minutes_used"
 }
 
+# Function to parse included minutes from the billing info
 get_included_minutes() {
   local billing_info
   billing_info=$(get_billing_info)
   echo "$billing_info" | jq -r ".included_minutes"
 }
 
+# Function to calculate usage percentage (total minutes used / included minutes * 100)
 calculate_usage_percentage() {
   local total_minutes_used
   local included_minutes
@@ -60,6 +68,7 @@ calculate_usage_percentage() {
   expr 100 \* "$total_minutes_used" / "$included_minutes"
 }
 
+# Function to monitor the usage and cancel the run if it exceeds certain threshold
 monitor_usage_and_cancel_run_if_exceeded() {
   local visibility threshold percentage_used
 
@@ -83,16 +92,20 @@ monitor_usage_and_cancel_run_if_exceeded() {
   fi
 }
 
+# Checking the validity of provided token
 if ! echo "$INPUT_TOKEN" | grep -qE "^(gh[ps]_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59})$"; then
   echo -e "\\033[1;31mError: 'token' input does not appear to be a valid GitHub token.\\033[0m"
   exit 1
 fi
 
+# Checking if the threshold is a number between 1 and 100
 if [[ $INPUT_THRESHOLD -lt 1 || $INPUT_THRESHOLD -gt 100 ]]; then
   echo -e "\033[1;31mError: 'threshold' input is invalid. It must be a number between 1 and 100.\033[0m"
   exit 1
 fi
 
+# Setting GitHub token as environment variable
 export GITHUB_TOKEN=${INPUT_TOKEN:-"GITHUB_TOKEN"}
 
+# Call the usage monitoring function
 monitor_usage_and_cancel_run_if_exceeded
