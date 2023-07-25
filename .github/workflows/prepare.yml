@@ -17,7 +17,7 @@ jobs:
           # GitHub access token for authentication.
           token: ${{ secrets.ACCESS_TOKEN }}
           # Defines the threshold for the usage guard.
-          threshold: 10
+          threshold: 70
 
   lint:
     name: Code quality
