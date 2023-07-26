@@ -105,7 +105,7 @@ if [[ $INPUT_THRESHOLD -lt 1 || $INPUT_THRESHOLD -gt 100 ]]; then
 fi
 
 # Setting GitHub token as environment variable
-export GITHUB_TOKEN=${INPUT_TOKEN:-"GITHUB_TOKEN"}
+export GITHUB_TOKEN=${INPUT_TOKEN:-$GITHUB_TOKEN}
 
 # Call the usage monitoring function
 monitor_usage_and_cancel_run_if_exceeded
