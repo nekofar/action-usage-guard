@@ -22,4 +22,4 @@ runs:
           shell: 'bash'
           env:
               INPUT_TOKEN: ${{ inputs.token }}
-              INPUT_THRESHOLD:  ${{ inputs.threshold }}
+              INPUT_THRESHOLD: ${{ inputs.threshold }}
