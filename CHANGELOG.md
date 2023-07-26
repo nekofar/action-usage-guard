@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.3] - 2023-07-26
+
+### <!-- 02 -->Bug Fixes
+
+- Change default value of `GITHUB_TOKEN` in `entrypoint.sh`
+
+### <!-- 04 -->Refactor
+
+- Optimize whitespace usage in `action.yml`
+
 ## [1.0.0-beta.2] - 2023-07-25
 
 ### <!-- 02 -->Bug Fixes
