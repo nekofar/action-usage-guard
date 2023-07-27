@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.7] - 2023-07-27
+
+### <!-- 05 -->Documentation
+
+- Add Personal Access Token information to README.md
+
 ## [1.0.0-beta.6] - 2023-07-27
 
 ### <!-- 04 -->Refactor
