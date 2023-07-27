@@ -77,7 +77,7 @@ monitor_usage_and_cancel_run_if_exceeded() {
 
   visibility=$(get_repo_visibility)
   if [ "$visibility" = "PUBLIC" ]; then
-    echo -e "\033[1;33mThis is a public repository. Monitoring of usage and action cancellation is skipped.\033[0m"
+    echo -e "\033[1;33mGiven it's a public repo, skipping both usage tracking and action termination.\033[0m"
     return 0
   fi
 
