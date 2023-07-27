@@ -44,6 +44,16 @@ jobs:
           who-to-greet: 'GitHub Actions'
 ```
 
+## Token
+
+To make use of this action, a **Fine-grained Personal Access Token (PAT)** is essential. The PAT needs to be configured differently based on whether it is for a user account or an organization account.
+
+If you use it for a user account, you need **Read** access to plan, **Read** access to metadata, and **Read** and **Write** access to actions.
+
+If you use it for an organization, you need **Read** access to organization administration, **Read** access to metadata, and **Read** and **Write** access to actions.
+
+Make sure to generate and handle the PAT securely, following the best practices for security. The access permissions can be managed by the user and organization administrators based on their security policies and requirements. If you require further assistance setting this up, please feel free to ask!
+
 ## Options
 
 The configuration used in the GitHub Action workflow includes several options for customization. Each of these
