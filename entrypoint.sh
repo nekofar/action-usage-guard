@@ -76,16 +76,15 @@ monitor_usage_and_cancel_run_if_exceeded() {
   local visibility threshold percentage_used
 
   visibility=$(get_repo_visibility)
-  threshold="$INPUT_THRESHOLD"
-  percentage_used=$(calculate_usage_percentage)
-
   if [ "$visibility" = "PUBLIC" ]; then
     echo -e "\033[1;33mThis is a public repository. Monitoring of usage and action cancellation is skipped.\033[0m"
     return 0
   fi
 
+  percentage_used=$(calculate_usage_percentage)
   echo -e "\033[1;34mThe current total usage is ${percentage_used}%.\033[0m"
 
+  threshold="$INPUT_THRESHOLD"
   if [ "$percentage_used" -ge "${threshold}" ]; then
     echo -e "\033[1;The usage exceeds the given threshold of ${threshold}%.\033[0m"
     echo -e "\033[1;33mThe ongoing GitHub Action is being cancelled due to overuse...\033[0m"
