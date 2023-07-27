@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.4] - 2023-07-27
+
+### <!-- 04 -->Refactor
+
+- Add option to activate debug mode in `entrypoint.sh`
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump nekofar/create-github-release from 1.0.6 to 1.0.8 
+
 ## [1.0.0-beta.3] - 2023-07-26
 
 ### <!-- 02 -->Bug Fixes
