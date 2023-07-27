@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.5] - 2023-07-27
+
+### <!-- 04 -->Refactor
+
+- Optimize if conditions of usage calculation in `entrypoint.sh`
+
 ## [1.0.0-beta.4] - 2023-07-27
 
 ### <!-- 04 -->Refactor
