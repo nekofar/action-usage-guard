@@ -3,6 +3,9 @@
 # Making sure the script stops if any of the commands fails
 set -eu
 
+# Enable debug mode if RUNNER_DEBUG is 1
+[[ "${RUNNER_DEBUG:-0}" -eq 1 ]] && set -x
+
 # Function to get visibility of the repository, whether public or private
 get_repo_visibility() {
   gh repo view "$GITHUB_REPOSITORY" --json visibility \
