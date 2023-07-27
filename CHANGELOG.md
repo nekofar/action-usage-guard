@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.6] - 2023-07-27
+
+### <!-- 04 -->Refactor
+
+- Adjust indentation level in `action.yml`
+- Optimize public repo message in `entrypoint.sh`
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump nekofar/create-github-release from 1.0.8 to 1.0.11 
+
 ## [1.0.0-beta.5] - 2023-07-27
 
 ### <!-- 04 -->Refactor
