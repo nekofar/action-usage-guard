@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.9] - 2023-07-28
+
+### <!-- 04 -->Refactor
+
+- Update GitHub token authentication process in `entrypoint.sh`
+
 ## [1.0.0-beta.8] - 2023-07-28
 
 ### <!-- 02 -->Bug Fixes
