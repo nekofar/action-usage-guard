@@ -19,15 +19,12 @@ on: [push]
 
 # These are your workflow's jobs. Each job represents a process that your workflow will run.
 jobs:
-  setup:
-    # Runs the job on the latest Ubuntu version
+  # This is the job for usage guard
+  guard:
+    # Runs the guard job on the latest Ubuntu version
     runs-on: ubuntu-latest
     steps:
-      # This is a step to checkout the code
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Uses the action-usage-guard action
+      # This step runs the Action Usage Guard
       - name: Run Action Usage Guard
         uses: nekofar/action-usage-guard@v1
         with:
@@ -36,11 +33,22 @@ jobs:
           # Defines the threshold for the usage guard.
           threshold: 70
 
-      # You can add as many steps as you want. Here is another example step.
+  # This is the setup job
+  setup:
+    # The setup job requires the completion of the usage-guard job
+    needs: [ guard ]
+    # Runs the setup job on the latest Ubuntu version
+    runs-on: ubuntu-latest
+    steps:
+      # This is a step to check out the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # This is a step with an example action
       - name: Another Step
-        # For illustration, we use actions/hello-world-docker-action
         uses: actions/hello-world-docker-action@v1
         with:
+          # This specifies who the action will 'greet'
           who-to-greet: 'GitHub Actions'
 ```
 
