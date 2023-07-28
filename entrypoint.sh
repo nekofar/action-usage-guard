@@ -109,8 +109,8 @@ if [[ $INPUT_THRESHOLD -lt 1 || $INPUT_THRESHOLD -gt 100 ]]; then
   exit 1
 fi
 
-# Setting GitHub token as environment variable
-export GITHUB_TOKEN=${INPUT_TOKEN:-$GITHUB_TOKEN}
+# Authenticates GitHub CLI using a supplied token
+echo "${INPUT_TOKEN}" | gh auth login --with-token
 
 # Call the usage monitoring function
 monitor_usage_and_cancel_run_if_exceeded
