@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.10] - 2023-07-28
+
+### <!-- 05 -->Documentation
+
+- Rework job order and dependencies in GitHub workflow
+
 ## [1.0.0-beta.9] - 2023-07-28
 
 ### <!-- 04 -->Refactor
