@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.8] - 2023-07-28
+
+### <!-- 02 -->Bug Fixes
+
+- Trim whitespaces from input token in `entrypoint.sh`
+
 ## [1.0.0-beta.7] - 2023-07-27
 
 ### <!-- 05 -->Documentation
