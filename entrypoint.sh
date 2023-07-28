@@ -94,6 +94,9 @@ monitor_usage_and_cancel_run_if_exceeded() {
   fi
 }
 
+# Trimming white spaces from input token
+INPUT_TOKEN=$(echo "$INPUT_TOKEN" | xargs)
+
 # Checking the validity of provided token
 if ! echo "$INPUT_TOKEN" | grep -qE "^(gh[ps]_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59})$"; then
   echo -e "\\033[1;31mError: 'token' input does not appear to be a valid GitHub token.\\033[0m"
