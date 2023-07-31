@@ -66,9 +66,7 @@ calculate_usage_percentage() {
   total_minutes_used=$(get_total_minutes_used)
   included_minutes=$(get_included_minutes)
 
-  # use expr for arithmetic in bash 3.2
-  # shellcheck disable=SC2003
-  expr 100 \* "$total_minutes_used" / "$included_minutes"
+  awk -v num1="$total_minutes_used" -v num2="$included_minutes" 'BEGIN {printf "%.2f", (num1*100)/num2}'
 }
 
 # Function to monitor the usage and cancel the run if it exceeds certain threshold
