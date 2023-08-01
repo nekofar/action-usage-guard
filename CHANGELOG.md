@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.11] - 2023-07-31
+
+### <!-- 04 -->Refactor
+
+- Replace expr with awk in `entrypoint.sh` for calculations
+
 ## [1.0.0-beta.10] - 2023-07-28
 
 ### <!-- 05 -->Documentation
