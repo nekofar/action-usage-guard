@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0-beta.12] - 2023-08-21
+
+### <!-- 02 -->Bug Fixes
+
+- Adjust condition check in `entrypoint.sh` to handle float
+
+### <!-- 07 -->Continuous Integrations
+
+- Bump nekofar/create-github-release from 1.0.11 to 1.0.12 
+
 ## [1.0.0-beta.11] - 2023-07-31
 
 ### <!-- 04 -->Refactor
