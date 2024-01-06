@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2024-01-06
+
+### Bug Fixes
+
+- Solve some minor issues and update dependencies
+
+### Documentation
+
+- Update social follow badge in README
+
 ## [1.0.1] - 2023-11-02
 
 ### Bug Fixes
