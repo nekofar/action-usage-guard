@@ -28,7 +28,7 @@ get_billing_endpoint() {
   if [ "$owner_type" = "User" ]; then
     endpoint="/users/$GITHUB_REPOSITORY_OWNER/settings/billing/actions"
   elif [ "$owner_type" = "Organization" ]; then
-    endpoint="/orgs/$GITHUB_REPOSITORY_OWNER/settings/billing/actions"
+    endpoint="/organizations/$GITHUB_REPOSITORY_OWNER/settings/billing/actions"
   fi
 
   echo "$endpoint"
