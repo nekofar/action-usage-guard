@@ -9,15 +9,15 @@ set -eu
 # Function to get visibility of the repository, whether public or private
 get_repo_visibility() {
   gh repo view "$GITHUB_REPOSITORY" --json visibility \
-         --jq '.visibility'
+    --jq '.visibility'
 }
 
 # Function to get the owner type of the repository, User or Organization
 get_owner_type() {
   gh api -H "Accept: application/vnd.github+json" \
-         -H "X-GITHUB-API-VERSION: 2022-11-28" \
-         /users/"$GITHUB_REPOSITORY_OWNER" \
-         --jq '.type'
+    -H "X-GITHUB-API-VERSION: 2022-11-28" \
+    /users/"$GITHUB_REPOSITORY_OWNER" \
+    --jq '.type'
 }
 
 # Function to construct the billing endpoint URL based on if the repository is owned by User or an Organization
@@ -40,8 +40,8 @@ get_billing_info() {
   endpoint=$(get_billing_endpoint "$(get_owner_type)")
 
   gh api -H "Accept: application/vnd.github+json" \
-           -H "X-GITHUB-API-VERSION: 2022-11-28" \
-           "$endpoint"
+    -H "X-GITHUB-API-VERSION: 2022-11-28" \
+    "$endpoint"
 }
 
 # Function to parse total minutes being used from the billing info
